@@ -1,60 +1,44 @@
 <template>
-  <!-- <v-main class="text-center">
-    <v-container align="center">
-      <v-col cols="8" class="card rounded-xl rounded-t-0">
-        <v-row align="center">
-          <v-spacer></v-spacer>
-          <v-col cols="6">
-
-          <v-card
-            :title="`Content ${n}`"
-            :subtitle="`Subtitle for Content ${n}`"
-            text="Lorem ipsum dolor sit amet consectetur, adipisicing elit.?"
-          ></v-card>
-        </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="4">
-          <v-text-field
-            class="tfield"
-            label="کلمه کلیدی مورد نظر را وارد کنید"
-            prepend-inner-icon="mdi-magnify"
-          ></v-text-field>
-        </v-col>
-          <v-spacer></v-spacer>
-        </v-row>
-      </v-col>
-    </v-container>
-  </v-main> -->
   <v-main>
-    <div align="center">
-      <v-col class="card rounded-xl rounded-t-0" cols="8" align="center">
-        <v-row class="ma-2">
-          <v-spacer></v-spacer>
-          <v-btn
-            color="#36597D"
-            class="addbtn"
-            append-icon="mdi-plus"
-            size="x-large"
-          >
-            اضافه کردن
-          </v-btn>
-          <v-spacer></v-spacer>
-          <v-col cols="4" class="tfield">
+    <div class="foot">
+      <v-row
+        class="card rounded-xl rounded-t-0 elevation-8"
+        align="center"
+        no-gutters
+      >
+        <v-spacer></v-spacer>
+        <v-btn
+          color="#36597D"
+          class="addbtn"
+          append-icon="mdi-plus"
+          size="x-large"
+        >
+          اضافه کردن
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-col>
+          <div class="tfield2">
             <v-text-field
-              class="tfield2"
+              class="tfield3 text-black"
               variant="outlined"
               label="کلمه کلیدی مورد نظر را وارد کنید"
               prepend-inner-icon="mdi-magnify"
-              :style="searchFieldStyle"
+              density="compact"
             >
             </v-text-field>
-          </v-col>
-          <v-spacer></v-spacer>
-        </v-row>
-      </v-col>
+          </div>
+        </v-col>
+        <v-spacer></v-spacer>
+      </v-row>
     </div>
     <v-container align="center">
-      <v-col class="blocks rounded-xl rounded-t-0" cols="10" align="center">
+      <v-col
+        class="blocks rounded-xl rounded-t-0"
+        cols="10"
+        md="12"
+        sm="10"
+        align="center"
+      >
         <v-row>
           <v-col>
             <v-btn
@@ -127,10 +111,8 @@
   align-items: center;
   text-align: center;
   background-color: #fff;
-  height: 80px;
   border-radius: 10px;
 }
-
 /* .tfield2 {
   align-items: center;
   text-align: center;
@@ -139,12 +121,30 @@
   padding: 10px;
   border-radius: 10px;
 } */
+.tfield2 {
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 200px;
+}
+.tfield3 {
+  align-items: center;
+  text-align: center;
+  height: 65px;
+  padding: 10px;
+}
 .card {
   background-color: #2ebfa5;
+  height: 70px;
 }
-/* .blocks {
-  background-color: red;
-} */
+.foot {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.blocks {
+  /* background-color: red; */
+  margin-top: 60px;
+}
 </style>
 
 <script>
@@ -158,7 +158,6 @@ export default {
         } else if (this.$vuetify.breakpoint.mdAndDown) {
           style.width = "50%";
         }
-
         return style;
       },
     },

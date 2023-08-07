@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar density="prominent" color="#ECF5FE">
+  <v-app-bar color="#ECF5FE" class="elevation-2">
     <v-btn icon class="icons ml-8 elevation-3" color="#F1F5F9" variant="flat">
       <v-icon color="#36597D" size="25">mdi-logout</v-icon>
     </v-btn>
@@ -42,7 +42,7 @@
       </svg>
     </label>
     <v-spacer></v-spacer>
-    <div class="tabs">
+    <div class="tabs hidden-sm hidden-xs">
       <button v-for="link in links" :key="link" class="tabs2 mx-7">
         {{ link }}
       </button>
@@ -55,7 +55,6 @@
       <v-img src="../../src/assets/lgo.png"></v-img>
     </v-avatar>
   </v-app-bar>
-
 </template>
 
 <style>
@@ -64,7 +63,7 @@
   font-family: Vazirmatn, sans-serif;
 }
 .icons {
-  margin: 4rem 0 0 1.5rem;
+  margin: 0rem 0 0 1.5rem;
 }
 .tabs {
   margin-top: auto;
@@ -96,7 +95,7 @@
 }
 
 .lab2 {
-  margin: 4.3rem 0 0 1.5rem;
+  margin: 0rem 0 0 1.5rem;
   width: 90px;
   height: 45px;
   position: relative;
@@ -156,6 +155,9 @@
 }
 .in2:checked + .lab2 svg.moon {
   fill: #fff;
+}
+@media (max-width: 770px) {
+
 }
 </style>
 
