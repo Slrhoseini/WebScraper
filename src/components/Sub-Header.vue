@@ -26,7 +26,7 @@
     </v-container>
   </v-main> -->
   <v-main>
-    <v-container align="center">
+    <div align="center">
       <v-col class="card rounded-xl rounded-t-0" cols="8" align="center">
         <v-row class="ma-2">
           <v-spacer></v-spacer>
@@ -39,7 +39,7 @@
             اضافه کردن
           </v-btn>
           <v-spacer></v-spacer>
-          <v-col cols="3" class="tfield">
+          <v-col cols="4" class="tfield">
             <v-text-field
               class="tfield2"
               variant="outlined"
@@ -52,6 +52,60 @@
           <v-spacer></v-spacer>
         </v-row>
       </v-col>
+    </div>
+    <v-container align="center">
+      <v-col class="blocks rounded-xl rounded-t-0" cols="10" align="center">
+        <v-row>
+          <v-col>
+            <v-btn
+              color="#36597D"
+              class="addbtn2 rounded-bs-xl rounded-te-xl"
+              append-icon="mdi-file-document-outline"
+              size="x-large"
+            >
+              مجموع اطلاعات
+              <br />
+              +۸۵۰,۰۰۰
+            </v-btn>
+          </v-col>
+          <v-col>
+            <v-btn
+              color="#36597D"
+              class="addbtn2 rounded-bs-xl rounded-te-xl"
+              append-icon="mdi-file-document-outline"
+              size="x-large"
+            >
+              مجموع اطلاعات
+              <br />
+              +۸۵۰,۰۰۰
+            </v-btn>
+          </v-col>
+          <v-col>
+            <v-btn
+              color="#36597D"
+              class="addbtn2 rounded-bs-xl rounded-te-xl"
+              append-icon="mdi-file-document-outline"
+              size="x-large"
+            >
+              مجموع سازمان ها
+              <br />
+              +۸۵۰,۰۰۰
+            </v-btn>
+          </v-col>
+          <v-col>
+            <v-btn
+              class="addbtn2 rounded-bs-xl rounded-te-xl"
+              color="#36597D"
+              append-icon="mdi-file-document-outline"
+              size="x-large"
+            >
+              مجموع اطلاعات
+              <br />
+              +۸۵۰,۰۰۰
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-col>
     </v-container>
   </v-main>
 </template>
@@ -62,6 +116,10 @@
   font-family: Vazirmatn, sans-serif;
 }
 .addbtn {
+  align-self: center;
+  color: white !important;
+}
+.addbtn2 {
   align-self: center;
   color: white !important;
 }
@@ -84,6 +142,9 @@
 .card {
   background-color: #2ebfa5;
 }
+/* .blocks {
+  background-color: red;
+} */
 </style>
 
 <script>
