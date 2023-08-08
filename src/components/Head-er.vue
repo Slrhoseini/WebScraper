@@ -1,9 +1,9 @@
 <template>
   <v-app-bar color="#ECF5FE" class="elevation-2">
-    <v-btn icon class="icons ml-8 elevation-3" color="#F1F5F9" variant="flat">
+    <v-btn icon class="icons ml-8 elevation-2" color="#F1F5F9" variant="flat">
       <v-icon color="#36597D" size="25">mdi-logout</v-icon>
     </v-btn>
-    <v-btn icon class="icons elevation-3" color="#F1F5F9" variant="flat">
+    <v-btn icon class="icons elevation-2" color="#F1F5F9" variant="flat">
       <v-icon color="#36597D" size="25">mdi-account-box-outline</v-icon>
     </v-btn>
     <input class="in2" type="checkbox" id="darkmode-toggle" />
@@ -43,22 +43,48 @@
     </label>
     <v-spacer></v-spacer>
     <div class="tabs hidden-sm hidden-xs">
-      <button v-for="link in links" :key="link" class="tabs2 mx-7">
+      <button v-for="link in links" :key="link" class="tabs2 mx-5">
         {{ link }}
       </button>
     </div>
-    <!-- <v-btn class="tabs" to="/">نمای کلی</v-btn>
-    <v-btn class="tabs" to="/">تحلیل اطلاعات</v-btn>
-    <v-btn class="tabs" to="/">سازمان ها</v-btn>
-    <v-btn class="tabs" to="/">لیست اطلاعات</v-btn> -->
-    <v-avatar size="50" class="ml-2">
-      <v-img src="../../src/assets/lgo.png"></v-img>
-    </v-avatar>
+    <DropDown class="dropD" />
+    <div class="webName">
+      <span class="subtitl">سامانه رهگیری</span>
+      <v-avatar size="50">
+        <v-img src="../../src/assets/lgo.png"></v-img>
+      </v-avatar>
+    </div>
   </v-app-bar>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap");
+
+.dropD {
+  opacity: 0;
+  visibility: hidden;
+  display: inline-block;
+  width: 0%;
+}
+@media (max-width: 960px) {
+  .dropD {
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    transition: all 0.3s ease;
+  }
+}
+.subtitl {
+  font-size: 18px;
+  font-weight: 600;
+  color: #36597d;
+  cursor: default;
+  padding-left: 5px;
+}
+.webName {
+  border: 2px solid #36597d;
+  border-radius: 15px;
+}
 * {
   font-family: Vazirmatn, sans-serif;
 }
@@ -70,11 +96,18 @@
 }
 .tabs2 {
   font-family: Vazirmatn, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   position: relative;
   text-decoration: none;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
+  transition: all 0.5s ease;
+}
+@media (max-width: 1045px) {
+  .tabs2 {
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
 }
 .tabs2::before {
   content: "";
@@ -156,13 +189,13 @@
 .in2:checked + .lab2 svg.moon {
   fill: #fff;
 }
-@media (max-width: 770px) {
-
-}
 </style>
 
 <script>
+import DropDown from "./Drop-Down.vue";
+
 export default {
+  components: { DropDown },
   data: () => ({
     links: ["لیست اطلاعات", "سازمان ها", "تحلیل اطلاعات", "نمای کلی"],
     // links: ["L1", "link 2"],
