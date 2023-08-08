@@ -59,26 +59,32 @@
               <v-icon color="#fff">mdi-fullscreen</v-icon>
             </v-btn>
             <v-spacer></v-spacer>
-            <p class="ptag">انتشار بر اساس سال</p>
+            <p class="ptag">سازمان ها</p>
           </v-row>
         </v-col>
-        <v-table>
-          <thead class="tabl">
-            <tr>
-              <th class="text-left">Name</th>
-              <th class="text-left">Calories</th>
-            </tr>
-          </thead>
-          <p class="unBlurText text-right">
+        <v-container>
+          <p
+            class="unBlurText"
+            @click="handleClick"
+            :class="active ? 'active' : 'non-active'"
+          >
             برای دیدن لیست سازمان ها کلیک کنید
           </p>
-          <tbody class="tabl">
-            <tr v-for="item in desserts" :key="item.name">
-              <td>{{ item.name }}</td>
-              <td>{{ item.calories }}</td>
-            </tr>
-          </tbody>
-        </v-table>
+          <v-table class="tabl">
+            <thead>
+              <tr>
+                <th class="text-left">Name</th>
+                <th class="text-left">Calories</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in desserts" :key="item.name">
+                <td>{{ item.name }}</td>
+                <td>{{ item.calories }}</td>
+              </tr>
+            </tbody>
+          </v-table>
+        </v-container>
       </v-card-item></v-card
     >
   </v-row>
@@ -90,6 +96,7 @@ import Chart from "chart.js";
 export default {
   data() {
     return {
+      active: false,
       desserts: [
         {
           name: "Frozen Yogurt",
@@ -123,6 +130,9 @@ export default {
     this.drawPieChart();
   },
   methods: {
+    handleClick() {
+      this.active = !this.active;
+    },
     drawLineChart() {
       const ctx = this.$refs.lineChartCanvas.getContext("2d");
       new Chart(ctx, {
@@ -189,6 +199,17 @@ export default {
 * {
   font-family: Vazirmatn, sans-serif;
 }
+.active {
+  opacity: 0%;
+  visibility: hidden;
+}
+.non-active {
+  opacity: 100%;
+}
+.active + .tabl {
+  filter: blur(0px);
+}
+
 .tabl {
   filter: blur(4px);
 }
@@ -196,9 +217,13 @@ export default {
   font-family: Vazirmatn, sans-serif;
   font-size: 17px;
   font-weight: bold;
-  text-decoration: none;
   transition: all 0.5s ease;
   cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  width: 92%;
+  top: 50%;
 }
 .rowback {
   background-color: #36597d;
