@@ -48,7 +48,7 @@
     ></v-card>
   </v-row>
   <v-row>
-    <v-card class="rounded-xl mx-auto mb-5" variant="outlined" width="500">
+    <v-card class="rounded-xl mx-auto mb-5" variant="outlined" width="900">
       <v-card-item class="cardo pa-0">
         <v-col>
           <v-row class="rowback pa-2">
@@ -75,10 +75,22 @@
               <tr>
                 <th class="text-left">Name</th>
                 <th class="text-left">Calories</th>
+                <th class="text-left">Name</th>
+                <th class="text-left">Calories</th>
+                <th class="text-left">Name</th>
+                <th class="text-left">Calories</th>
+                <th class="text-left">Name</th>
+                <th class="text-left">Calories</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="item in desserts" :key="item.name">
+                <td>{{ item.name }}</td>
+                <td>{{ item.calories }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.calories }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.calories }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.calories }}</td>
               </tr>
@@ -211,7 +223,7 @@ export default {
 }
 
 .tabl {
-  filter: blur(4px);
+  filter: blur(3px);
 }
 .unBlurText {
   font-family: Vazirmatn, sans-serif;
