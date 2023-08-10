@@ -1,8 +1,10 @@
 <template>
   <v-row justify="center">
-    <v-dialog v-model="dialog" persistent width="500px">
+    <v-dialog v-model="dialog" persistent width="800px">
       <template v-slot:activator="{ props }">
-        <v-btn color="blue" v-bind="props" class="mb-4"> only a test for dialog </v-btn>
+        <v-btn color="blue" v-bind="props" class="mb-4">
+          only a test for dialog
+        </v-btn>
       </template>
       <!-- <v-card>
         <v-card-title class="text-h5">
@@ -22,34 +24,42 @@
           </v-btn>
         </v-card-actions>
       </v-card> -->
-      <v-card class="mx-auto" color="#36597D" width="500">
+      <v-card class="mx-auto" width="800">
         <v-toolbar flat color="blue">
-          <v-btn icon="mdi-account"></v-btn>
+          <v-btn icon="mdi-file-search"></v-btn>
 
           <v-spacer></v-spacer>
-          <v-toolbar-title class="font-weight-light">
-            کلمات کلیدی
-          </v-toolbar-title>
-          <v-btn icon @click="isEditing = !isEditing">
-            <v-fade-transition leave-absolute>
-              <v-icon v-if="isEditing">mdi-close</v-icon>
 
-              <v-icon v-else>mdi-pencil</v-icon>
-            </v-fade-transition>
-          </v-btn>
+          <p class="words1 pa-5">کلمات کلیدی</p>
         </v-toolbar>
 
         <v-card-text>
-          <div class="tfield2">
-            <v-text-field
-              class="tfield3 text-black"
-              variant="outlined"
-              label="کلمه کلیدی خود را وارد کنید"
-              prepend-inner-icon="mdi-magnify"
-              density="compact"
+          <v-row align="center" no-gutters>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="#36597D"
+              class="addbtn"
+              append-icon="mdi-plus"
+              size="large"
             >
-            </v-text-field>
-          </div>
+              اضافه کردن
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-col>
+              <div class="tfield22">
+                <v-text-field
+                  class="tfield33 text-black"
+                  variant="outlined"
+                  label="کلمه کلیدی مورد نظر را وارد کنید"
+                  prepend-inner-icon="mdi-magnify"
+                  density="compact"
+                >
+                </v-text-field>
+              </div>
+            </v-col>
+            <v-spacer></v-spacer>
+          </v-row>
+
           <!-- <v-autocomplete
             :disabled="!isEditing"
             :items="states"
@@ -66,8 +76,10 @@
             item-title="name"
             item-value="abbr"
             label="کلمات کلیدی :"
-            class="text-white pa-5"
+            class="pa-5"
             multiple
+            variant="outlined"
+            chips
           ></v-select>
         </v-card-text>
 
@@ -75,8 +87,24 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
+          <v-btn
+            @click="dialog = false"
+            color="white"
+            class="addbtnn my-3 mx-5"
+            size="large"
+          >
+            اعمال کردن
+          </v-btn>
 
-          <v-btn @click="dialog = false" color="white"> اعمال کردن </v-btn>
+          <v-btn
+            @click="dialog = false"
+            color="white"
+            class="addbtnn my-3 mx-5"
+            size="large"
+          >
+            بستن
+          </v-btn>
+          <v-spacer></v-spacer>
         </v-card-actions>
 
         <!-- <v-snackbar
@@ -140,4 +168,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.words1 {
+  font-size: 20px;
+}
+.tfield22 {
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 300px;
+}
+.tfield33 {
+  align-items: center;
+  text-align: center;
+  height: 65px;
+  padding: 10px;
+}
+.addbtnn {
+  align-self: center;
+  background-color: #36597d !important;
+}
+</style>
