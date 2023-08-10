@@ -152,7 +152,7 @@
   left: 0;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .tabs2:hover::before {
   transform-origin: left;
@@ -170,7 +170,7 @@
   box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
     inset 0px -5px 15px rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .lab2:after {
   content: "";
@@ -182,7 +182,7 @@
   background: linear-gradient(180deg, #ffcc89, #d8860b);
   border-radius: 50px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .in2 {
   width: 0;
@@ -198,7 +198,7 @@
   background: linear-gradient(180deg, #777, #313131);
 }
 /* label:active:after {
-  width: 50px;
+  width: 50%;
 } */
 .lab2 svg {
   position: absolute;
@@ -208,12 +208,12 @@
 .lab2 svg.sun {
   left: 5px;
   fill: #fff;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .lab2 svg.moon {
   left: 50px;
   fill: #7e7e7e;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .in2:checked + .lab2 svg.sun {
   fill: #7e7e7e;
