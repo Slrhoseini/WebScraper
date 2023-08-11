@@ -103,16 +103,93 @@
         </v-dialog>
         <v-spacer></v-spacer>
         <v-col>
-          <div class="tfield2">
-            <v-text-field
-              class="tfield3 text-black"
-              variant="outlined"
-              label="کلمه کلیدی مورد نظر را وارد کنید"
-              prepend-inner-icon="mdi-magnify"
-              density="compact"
-            >
-            </v-text-field>
-          </div>
+          <v-dialog v-model="dialog2" persistent width="800px">
+            <template v-slot:activator="{ props }">
+              <div class="tfield2" v-bind="props">
+                <v-text-field
+                  class="tfield3 text-black"
+                  variant="outlined"
+                  label="کلمه کلیدی مورد نظر را وارد کنید"
+                  prepend-inner-icon="mdi-magnify"
+                  density="compact"
+                  disabled
+                >
+                </v-text-field>
+              </div>
+            </template>
+            <v-row justify="center">
+              <v-card class="mx-auto" width="800">
+                <v-toolbar flat color="blue">
+                  <!-- <v-btn icon="mdi-file-search"></v-btn> -->
+                  <small class="pa-5"
+                    >حداکثر ۵ مورد را میتوان انتخاب کرد *</small
+                  >
+                  <v-spacer></v-spacer>
+                  <p class="words1 pa-5">کلمات کلیدی</p>
+                </v-toolbar>
+                <v-card-text>
+                  <v-row align="center" no-gutters>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="#36597D"
+                      class="addbtn"
+                      append-icon="mdi-plus"
+                      size="large"
+                    >
+                      اضافه کردن
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <v-col>
+                      <div class="tfield22">
+                        <v-text-field
+                          class="tfield33 text-black"
+                          variant="outlined"
+                          label="کلمه کلیدی مورد نظر را وارد کنید"
+                          prepend-inner-icon="mdi-magnify"
+                          density="compact"
+                        >
+                        </v-text-field>
+                      </div>
+                    </v-col>
+                    <v-spacer></v-spacer>
+                  </v-row>
+                  <v-select
+                    :items="carditems"
+                    :custom-filter="customFilter"
+                    item-title="name"
+                    item-value="abbr"
+                    label="کلمات کلیدی :"
+                    class="pa-5"
+                    multiple
+                    variant="outlined"
+                    chips
+                    closable-chips
+                  ></v-select>
+                </v-card-text>
+                <v-divider></v-divider>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    @click="dialog2 = false"
+                    color="white"
+                    class="addbtnn my-3 mx-5"
+                    size="large"
+                  >
+                    اعمال کردن
+                  </v-btn>
+                  <v-btn
+                    @click="dialog2 = false"
+                    color="white"
+                    class="addbtnn my-3 mx-5"
+                    size="large"
+                  >
+                    بستن
+                  </v-btn>
+                  <v-spacer></v-spacer>
+                </v-card-actions>
+              </v-card>
+            </v-row>
+          </v-dialog>
         </v-col>
         <v-spacer></v-spacer>
       </v-row>
@@ -211,6 +288,7 @@
   background-color: #fff;
   border-radius: 10px;
   min-width: 200px;
+  cursor: pointer;
 }
 .tfield3 {
   align-items: center;
@@ -257,6 +335,7 @@ export default {
   data: () => ({
     hasSaved: false,
     dialog: false,
+    dialog2: false,
     isEditing: null,
     selected: [],
     carditems: [
