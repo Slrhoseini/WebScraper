@@ -57,7 +57,7 @@
         </tbody>
       </v-table>
     </v-card>
-    <v-card v-if="showData === 2" class="mx-auto" width="800">
+    <v-card v-if="showData === 2" class="mx-auto">
       <v-card-item>
         <div>
           <div class="head1">
