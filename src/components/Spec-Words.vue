@@ -95,17 +95,37 @@
         </div>
       </v-card-item>
       <v-card-actions class="cardbtns">
-        <v-btn variant="outlined"> Button </v-btn>
-        <v-btn variant="outlined"> Button </v-btn>
-        <v-btn variant="outlined"> Button </v-btn>
-        <v-btn variant="outlined"> Button </v-btn>
+        <v-btn variant="outlined"> Keyword </v-btn>
+        <v-btn variant="outlined"> Keyword </v-btn>
+        <v-btn variant="outlined"> Keyword </v-btn>
+        <v-btn variant="outlined"> Keyword </v-btn>
       </v-card-actions>
+      <v-card class="barcard rounded-xl mb-5" variant="outlined">
+        <v-card-item class="pa-0">
+          <!-- <v-col>
+            <v-row class="rowback pa-2">
+              <v-btn icon variant="text" size="30">
+                <v-icon color="#fff">mdi-download</v-icon>
+              </v-btn>
+              <v-btn icon variant="text" size="30">
+                <v-icon color="#fff">mdi-fullscreen</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+              <p class="ptag">انتشار بر اساس سال</p>
+            </v-row>
+          </v-col> -->
+          <dChart /> </v-card-item
+      ></v-card>
     </v-card>
   </v-dialog>
 </template>
 
 <script>
+import dChart from "./Dialog-Chart.vue";
 export default {
+  components: {
+    dChart,
+  },
   data() {
     return {
       hasSaved: false,
@@ -234,5 +254,8 @@ export default {
 }
 .cardbtns {
   margin-left: auto;
+}
+.barcard {
+  margin: auto;
 }
 </style>
