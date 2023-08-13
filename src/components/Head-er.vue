@@ -75,9 +75,21 @@
     </label>
     <v-spacer></v-spacer>
     <div class="tabs hidden-sm hidden-xs">
-      <button v-for="link in links" :key="link" class="tabs2 mx-5">
+      <!-- <button v-for="link in links" :key="link" class="tabs2 mx-5">
         {{ link }}
-      </button>
+      </button> -->
+      <button class="tabs2 mx-5">لیست اطلاعات</button>
+      <router-link to="/tahlil" custom v-slot="{ navigate }">
+        <button @click="navigate" role="link" class="tabs2 mx-5">
+          سازمان ها
+        </button>
+      </router-link>
+      <button class="tabs2 mx-5">تحلیل اطلاعات</button>
+      <router-link to="/homee" custom v-slot="{ navigate }">
+        <button @click="navigate" role="link" class="tabs2 mx-5">
+          نمای کلی
+        </button>
+      </router-link>
     </div>
     <DropDown class="dropD" />
     <div class="webName">

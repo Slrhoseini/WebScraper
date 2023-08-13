@@ -194,66 +194,7 @@
         <v-spacer></v-spacer>
       </v-row>
     </div>
-    <v-container align="center">
-      <v-col
-        class="blocks rounded-xl rounded-t-0"
-        cols="10"
-        md="12"
-        sm="10"
-        align="center"
-      >
-        <v-row>
-          <v-col>
-            <v-btn
-              color="#36597D"
-              class="addbtn2 rounded-bs-xl rounded-te-xl"
-              append-icon="mdi-file-document-outline"
-              size="x-large"
-            >
-              مجموع اطلاعات
-              <br />
-              +۸۵۰,۰۰۰
-            </v-btn>
-          </v-col>
-          <v-col>
-            <v-btn
-              color="#36597D"
-              class="addbtn2 rounded-bs-xl rounded-te-xl"
-              append-icon="mdi-file-document-outline"
-              size="x-large"
-            >
-              مجموع اطلاعات
-              <br />
-              +۸۵۰,۰۰۰
-            </v-btn>
-          </v-col>
-          <v-col>
-            <v-btn
-              color="#36597D"
-              class="addbtn2 rounded-bs-xl rounded-te-xl"
-              append-icon="mdi-file-document-outline"
-              size="x-large"
-            >
-              مجموع سازمان ها
-              <br />
-              +۸۵۰,۰۰۰
-            </v-btn>
-          </v-col>
-          <v-col>
-            <v-btn
-              class="addbtn2 rounded-bs-xl rounded-te-xl"
-              color="#36597D"
-              append-icon="mdi-file-document-outline"
-              size="x-large"
-            >
-              مجموع اطلاعات
-              <br />
-              +۸۵۰,۰۰۰
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-container>
+
   </v-main>
 </template>
 
@@ -299,6 +240,7 @@
 .card {
   background-color: #2ebfa5;
   height: 70px;
+  margin-top: 0;
 }
 .foot {
   position: fixed;
@@ -306,10 +248,9 @@
   z-index: 100;
 }
 .blocks {
-  /* background-color: red; */
+  /* background-color: yellow; */
   margin-top: 60px;
 }
-
 .words1 {
   font-size: 20px;
 }

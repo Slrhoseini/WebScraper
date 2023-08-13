@@ -1,4 +1,64 @@
 <template>
+  <v-container align="center">
+    <v-col
+      class="blocks rounded-xl rounded-t-0"
+      cols="10"
+      md="12"
+      sm="10"
+      align="center"
+    >
+      <v-row>
+        <v-col>
+          <v-btn
+            color="#36597D"
+            class="addbtn2 rounded-bs-xl rounded-te-xl"
+            append-icon="mdi-file-document-outline"
+            size="x-large"
+          >
+            مجموع اطلاعات
+            <br />
+            +۸۵۰,۰۰۰
+          </v-btn>
+        </v-col>
+        <v-col>
+          <v-btn
+            color="#36597D"
+            class="addbtn2 rounded-bs-xl rounded-te-xl"
+            append-icon="mdi-file-document-outline"
+            size="x-large"
+          >
+            مجموع اطلاعات
+            <br />
+            +۸۵۰,۰۰۰
+          </v-btn>
+        </v-col>
+        <v-col>
+          <v-btn
+            color="#36597D"
+            class="addbtn2 rounded-bs-xl rounded-te-xl"
+            append-icon="mdi-file-document-outline"
+            size="x-large"
+          >
+            مجموع سازمان ها
+            <br />
+            +۸۵۰,۰۰۰
+          </v-btn>
+        </v-col>
+        <v-col>
+          <v-btn
+            class="addbtn2 rounded-bs-xl rounded-te-xl"
+            color="#36597D"
+            append-icon="mdi-file-document-outline"
+            size="x-large"
+          >
+            مجموع اطلاعات
+            <br />
+            +۸۵۰,۰۰۰
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-container>
   <v-row>
     <v-card
       class="vcar1 rounded-xl mb-5"
@@ -247,10 +307,12 @@ export default {
 .vcar1 {
   margin-left: auto;
   margin-right: 10px;
+  /* margin-top: 100px; */
 }
 .vcar2 {
   margin-right: auto;
   margin-left: 10px;
+  /* margin-top: 100px; */
 }
 @media (max-width: 1010px) {
   .vcar1 {
@@ -261,5 +323,13 @@ export default {
     margin-right: 0;
     margin: auto;
   }
+}
+.addbtn2 {
+  align-self: center;
+  color: white !important;
+}
+.blocks {
+  /* background-color: yellow; */
+  margin-top: 60px;
 }
 </style>
