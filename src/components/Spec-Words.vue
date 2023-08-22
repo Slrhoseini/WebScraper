@@ -443,9 +443,9 @@ export default {
 .tool1 {
   margin-top: 65px;
 }
-/* .head11 {
-  margin-bottom: 10px;
-} */
+.head11 {
+  width: 100%;
+}
 .head12 {
   font-weight: bold;
   margin-bottom: 10px;

@@ -194,7 +194,6 @@
         <v-spacer></v-spacer>
       </v-row>
     </div>
-
   </v-main>
 </template>
 

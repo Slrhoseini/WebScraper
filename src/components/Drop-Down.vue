@@ -13,7 +13,9 @@
       </template>
       <v-list>
         <v-list-item class="popv" v-for="(item, i) in items" :key="i">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <router-link :to="item.path">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </router-link>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -24,10 +26,10 @@
 export default {
   data: () => ({
     items: [
-      { title: "نمای کلی" },
-      { title: "تحلیل اطلاعات" },
-      { title: "سازمان ها" },
-      { title: "لیست اطلاعات" },
+      { title: "نمای کلی", path: "/homee" },
+      { title: "تحلیل اطلاعات", path: "/" },
+      { title: "سازمان ها", path: "/tahlil" },
+      { title: "لیست اطلاعات", path: "/" },
     ],
   }),
 };
@@ -48,5 +50,22 @@ export default {
   /* background-color: #DEDEDE;
   border-radius: 15px; 
   */
+}
+/* استایل خط کشیده شده (نشانگر باز شده قبلی) */
+.popv:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+/* استایل خط معمولی */
+.v-list-item-title {
+  color: black; /* رنگ متن خط‌های معمولی */
+}
+
+/* استایل خط کشیده شده (نشانگر باز شده قبلی) در حالت هاور */
+.v-list-item:hover .popv:after {
+  background-color: black;
 }
 </style>
