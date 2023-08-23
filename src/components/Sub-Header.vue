@@ -6,8 +6,7 @@
         align="center"
         no-gutters
       >
-        <v-spacer></v-spacer>
-        <v-dialog v-model="dialog" persistent width="800px">
+        <!-- <v-dialog v-model="dialog" persistent width="800px">
           <template v-slot:activator="{ props }">
             <v-btn
               v-bind="props"
@@ -22,7 +21,6 @@
           <v-row justify="center">
             <v-card class="mx-auto" width="800">
               <v-toolbar flat color="blue">
-                <!-- <v-btn icon="mdi-file-search"></v-btn> -->
                 <small class="pa-5">حداکثر ۵ مورد را میتوان انتخاب کرد *</small>
                 <v-spacer></v-spacer>
                 <p class="words1 pa-5">کلمات کلیدی</p>
@@ -88,20 +86,9 @@
                 </v-btn>
                 <v-spacer></v-spacer>
               </v-card-actions>
-
-              <!-- <v-snackbar
-          v-model="hasSaved"
-          :timeout="2000"
-          attach
-          position="absolute"
-          location="bottom left"
-        >
-          Your profile has been updated
-        </v-snackbar> -->
             </v-card>
           </v-row>
-        </v-dialog>
-        <v-spacer></v-spacer>
+        </v-dialog> -->
         <v-col>
           <v-dialog v-model="dialog2" persistent width="800px">
             <template v-slot:activator="{ props }">
@@ -153,7 +140,7 @@
                     </v-col>
                     <v-spacer></v-spacer>
                   </v-row>
-                  <v-select
+                  <!-- <v-select
                     :items="carditems"
                     :custom-filter="customFilter"
                     item-title="name"
@@ -164,7 +151,19 @@
                     variant="outlined"
                     chips
                     closable-chips
-                  ></v-select>
+                  ></v-select> -->
+                  <div class="multiselect1">
+                    <VueMultiselect
+                      v-model="selected"
+                      :options="options"
+                      :multiple="true"
+                      :close-on-select="false"
+                      placeholder="Select option"
+                      openDirection="bottom"
+                      class="multiselect2"
+                    >
+                    </VueMultiselect>
+                  </div>
                 </v-card-text>
                 <v-divider></v-divider>
                 <v-card-actions>
@@ -191,7 +190,6 @@
             </v-row>
           </v-dialog>
         </v-col>
-        <v-spacer></v-spacer>
       </v-row>
     </div>
   </v-main>
@@ -199,6 +197,15 @@
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap");
+.multiselect1 {
+  margin-top: 20px;
+  padding-bottom: 50px;
+  margin-left: auto;
+}
+.multiselect2 {
+  width: 96%;
+  position: fixed;
+}
 * {
   font-family: Vazirmatn, sans-serif;
 }
@@ -223,12 +230,15 @@
   height: 75px;
   padding: 10px;
   border-radius: 10px;
+    min-width: 200px;
 } */
 .tfield2 {
   background-color: #fff;
   border-radius: 10px;
-  min-width: 200px;
   cursor: pointer;
+  max-width: 285px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .tfield3 {
   align-items: center;
@@ -256,7 +266,7 @@
 .tfield22 {
   background-color: #fff;
   border-radius: 10px;
-  min-width: 300px;
+  min-width: 290px;
 }
 .tfield33 {
   align-items: center;
@@ -271,13 +281,29 @@
 </style>
 
 <script>
+import VueMultiselect from "vue-multiselect";
+
 export default {
+  components: { VueMultiselect },
   data: () => ({
     hasSaved: false,
     dialog: false,
     dialog2: false,
     isEditing: null,
-    selected: [],
+    selected: null,
+    options: [
+      "Username",
+      "Role",
+      "Email",
+      "First Name",
+      "Last Name",
+      "Timezone",
+      "Expiration Time",
+      "Created By",
+      "Creation Time",
+      "Last Modified",
+      "Last Modification Time",
+    ],
     carditems: [
       "Username",
       "Role",

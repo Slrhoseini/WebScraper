@@ -234,6 +234,7 @@
   fill: #fff;
 }
 </style>
+<style src="vue-multiselect/dist/vue-multiselect.css"></style>
 
 <script>
 import DropDown from "./Drop-Down.vue";
